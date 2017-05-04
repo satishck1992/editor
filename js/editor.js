@@ -496,9 +496,9 @@ function Editor(selector, opts) {
             
             
             range = self.selection.getRangeAt(0);
+            debugger
             parentNode = range.startContainer.parentNode;
             currentNode = range.startContainer;
-            
             if (!self.isList(parentNode)) {
                 if (self.isHeading(parentNode.nodeName) || parentNode.nodeName === 'BLOCKQUOTE') {
                     e.preventDefault();
@@ -509,7 +509,7 @@ function Editor(selector, opts) {
                         if (currentNode.textContent.trim() === '') {
                             e.preventDefault();
                             //log(range.startContainer);
-                            self.liveElement.insertBefore(d.createElement('hr'), range.startContainer);
+                            // self.liveElement.insertBefore(d.createElement('hr'), range.startContainer);
                         } else {
                             if (/^1\.?/.test(currentNode.textContent)) {
                                 e.preventDefault();
